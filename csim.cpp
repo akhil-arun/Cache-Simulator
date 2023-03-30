@@ -100,7 +100,7 @@ using namespace std;
  // change to int
  int runCache(int* adr, int ** cache, int adrSize, int numSets, int colSize, int wordsPerBlock, int setBitLength, int blockOffLength){
  	int hits = 0;
-   string ifHit;
+        string ifHit;
  	for(int i = 0; i < adrSize; i++){
  		string memBits = bitset<12>(adr[i]).to_string();
  		reverse(memBits.begin(), memBits.end());
@@ -153,22 +153,22 @@ using namespace std;
 	int hits, misses;
 	double missRate, hitRate;
 	hits = runCache(adr, cache, size, numSets, colSize, wordsPerBlock, setBitLength, blockOffLength);
-   misses = size - hits;
-   hitRate = ((double) hits/size) * 100;
-   missRate = ((double) misses/size) * 100;
+        misses = size - hits;
+        hitRate = ((double) hits/size) * 100;
+        missRate = ((double) misses/size) * 100;
 
-   cout << "Pass 1 hits:" << hits << " = " << round(hitRate) << "%" << endl;
-   cout << "Pass 1 misses:" << misses << " = " << round(missRate) << "%" << endl;
-   cout << endl;
+        cout << "Pass 1 hits:" << hits << " = " << round(hitRate) << "%" << endl;
+        cout << "Pass 1 misses:" << misses << " = " << round(missRate) << "%" << endl;
+        cout << endl;
 	
 
 	hits = runCache(adr, cache, size, numSets, colSize, wordsPerBlock, setBitLength, blockOffLength);
 	misses = size - hits;
 	hitRate = ((double) hits/size) * 100;
-   missRate = ((double) misses/size) * 100;
+        missRate = ((double) misses/size) * 100;
 	cout << "Pass 2 hits:" << hits << " = " << round(hitRate) << "%" <<endl;
-   cout << "Pass 2 misses:" << misses << " = " << round(missRate) << "%" << endl;
-   cout << endl;
+        cout << "Pass 2 misses:" << misses << " = " << round(missRate) << "%" << endl;
+        cout << endl;
 
 	for(int i = 0; i < numSets; i++)
 		delete [] cache[i];
@@ -180,18 +180,18 @@ using namespace std;
 void problemNine(){
 	int adr[]  = { 0x40, 0x44, 0x48, 0x4C, 0x70, 0x74, 0x78, 0x7C, 0x80, 0x84, 0x88, 
 		     0x8C, 0x90 , 0x94 , 0x98, 0x9C, 0x0, 0x4, 0x8, 0xC ,0x10, 0x14, 0x18, 0x1C, 0x20};
-     evaluateCache("Problem 8.9a", adr, 25, 1, 1);
-     evaluateCache("Problem 8.9b", adr, 25, 1, 16);
-     evaluateCache("Problem 8.9c", adr, 25, 1, 2);
-     evaluateCache("Problem 8.9d", adr, 25, 2, 1);
+     	evaluateCache("Problem 8.9a", adr, 25, 1, 1);
+     	evaluateCache("Problem 8.9b", adr, 25, 1, 16);
+     	evaluateCache("Problem 8.9c", adr, 25, 1, 2);
+     	evaluateCache("Problem 8.9d", adr, 25, 2, 1);
 }
 
 void problemTen(){
 	int adr[] = { 0x74, 0xA0, 0x78, 0x38C, 0xAC, 0x84, 0x88, 0x8C, 0x7C, 0x34, 0x38, 0x13C, 0x388, 0x18C};
-   evaluateCache("Problem 8.10a", adr, 14, 1, 1);
-   evaluateCache("Problem 8.10b", adr, 14, 2, 8);
-   evaluateCache("Problem 8.10c", adr, 14, 2, 2);
-   evaluateCache("Problem 8.10d", adr, 14, 4, 1);
+   	evaluateCache("Problem 8.10a", adr, 14, 1, 1);
+   	evaluateCache("Problem 8.10b", adr, 14, 2, 8);
+   	evaluateCache("Problem 8.10c", adr, 14, 2, 2);
+   	evaluateCache("Problem 8.10d", adr, 14, 4, 1);
 }
 
 
